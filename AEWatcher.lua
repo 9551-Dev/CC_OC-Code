@@ -10,8 +10,7 @@ if not wrap then error("failed to find Storage interface", 0) end
 local old_list = wrap.list() -- convert_to_name(wrap.list())
 local api = require("lib/log")
 local mons = {peripheral.find("monitor")}
-local logs = {}
-local list = {}
+local logs,list = {},{}
 local function log(str, type) for _, v in pairs(logs) do v(str, type) end end
 local lt = debug.getmetatable(api.create_log(term)).__index
 
